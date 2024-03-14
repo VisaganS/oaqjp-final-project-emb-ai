@@ -23,7 +23,7 @@ def emotion_detector(text_to_analyse):
                 dominant_emotion = emotion
                 highest_emotion_value = value
 
-    elif response.status_code == 500:
+    elif response.status_code == 400:
          emotions = {
             'anger': None,
             'disgust': None,
@@ -31,6 +31,8 @@ def emotion_detector(text_to_analyse):
             'joy': None,
             'sadness': None
         }
+         dominant_emotion = None
+        
     return {'anger': emotions['anger'], 'disgust': emotions['disgust'], 'fear': emotions['fear'], 'joy': emotions['joy'], 'sadness': emotions['sadness'], 'dominant_emotion': dominant_emotion}
 
 
